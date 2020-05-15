@@ -1,0 +1,133 @@
+*
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box 
+
+    body 
+        font-family: Arial
+        background: #e3e4e5
+        .container
+            display: grid
+            grid-template-rows: repeat(2,auto)  
+            grid-template-columns: repeat(2,1fr)
+            gap: 10px
+            grid-template-areas: "header header" "tabla formulario"
+            .item 
+                background: lightblue
+                padding: 10px
+                border: 1px solid black
+            .header
+                grid-area: header
+                .sidebar
+                    position: fixed
+                    left: -250px
+                    width: 250px
+                    height: 95%
+                    background: #042331
+                    transition: all .5s ease
+                    header
+                        text-align: center
+                        font-size: 22px
+                        color: white
+                        line-height: 70px
+                        background: #063146
+                        user-select: none
+                    ul a
+                        text-decoration: none
+                        display: block
+                        height: 100%
+                        width: 100%
+                        line-height: 65px
+                        font-size: 20px
+                        color: white
+                        padding-left: 40px
+                        transition: .4s
+                    ul li:hover a 
+                        padding-left: 50px     
+                #check
+                    display: none
+                #btn,#cancel
+                    position: relative
+                    cursor: pointer
+                    background: lightblue
+                    border-radius: 3px
+                #btn
+                    left: 1px
+                    top: 25px
+                    font-size: 35px
+                    color: white
+                    padding: 2px 6px
+                    transition: all .5s ease
+                #cancel
+                    z-index: 1111
+                    left: -250px
+                    top: 60px
+                    font-size: 30px
+                    color: white
+                    padding: 4px 9px
+                    transition: all .5s ease
+                #check:checked ~ .sidebar
+                    left: 0
+                #check:checked ~ label #btn
+                    left: 150px
+                    opacity: 0
+                    pointer-events: none    
+                #check:checked ~ label #cancel
+                    left: 20px
+
+                .titulo
+                    padding: 10px
+                    text-align: center
+            .tabla
+                grid-area: tabla
+                text-align: center
+                .titulo-tabla
+                    padding: 10px
+                    margin-bottom: 8px
+                    border: 1px solid white
+                    border-radius: 5px
+                table 
+                    width: 100%
+                    background: white
+                    font-size: 12px
+                    border-collapse: collapse
+                    th,td
+                        padding: 6px
+                    
+            .formulario
+                grid-area: formulario
+                text-align: center
+                .titulo-form
+                    padding: 10px
+                    margin-bottom: 8px
+                    border: 1px solid white
+                    border-radius: 5px
+                .input1,.input2,.input3
+                    width: 90%
+                    padding: 6px
+                    margin: 6px
+                .btn-submit1,.btn-submit2,.btn-submit3
+                    padding: 4px
+                    margin: 4px
+        @media screen and ( max-width: 700px )
+            .container
+                grid-template-columns: 1fr
+                grid-template-rows: auto
+                grid-template-areas: "header" "tabla" "formulario"
+            
+
+                    
+                    
+                
+        
+      
+    
+        
+            
+
+                    
+                    
+                
+        
+      

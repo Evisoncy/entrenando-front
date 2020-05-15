@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  * body {
+    font-family: Arial;
+    background: #e3e4e5; }
+    * body .container {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      grid-template-areas: "header header" "tabla formulario"; }
+      * body .container .item {
+        background: lightblue;
+        padding: 10px;
+        border: 1px solid black; }
+      * body .container .header {
+        grid-area: header; }
+        * body .container .header .sidebar {
+          position: fixed;
+          left: -250px;
+          width: 250px;
+          height: 95%;
+          background: #042331;
+          transition: all 0.5s ease; }
+          * body .container .header .sidebar header {
+            text-align: center;
+            font-size: 22px;
+            color: white;
+            line-height: 70px;
+            background: #063146;
+            user-select: none; }
+          * body .container .header .sidebar ul a {
+            text-decoration: none;
+            display: block;
+            height: 100%;
+            width: 100%;
+            line-height: 65px;
+            font-size: 20px;
+            color: white;
+            padding-left: 40px;
+            transition: 0.4s; }
+          * body .container .header .sidebar ul li:hover a {
+            padding-left: 50px; }
+        * body .container .header #check {
+          display: none; }
+        * body .container .header #btn, * body .container .header #cancel {
+          position: relative;
+          cursor: pointer;
+          background: lightblue;
+          border-radius: 3px; }
+        * body .container .header #btn {
+          left: 1px;
+          top: 25px;
+          font-size: 35px;
+          color: white;
+          padding: 2px 6px;
+          transition: all 0.5s ease; }
+        * body .container .header #cancel {
+          z-index: 1111;
+          left: -250px;
+          top: 60px;
+          font-size: 30px;
+          color: white;
+          padding: 4px 9px;
+          transition: all 0.5s ease; }
+        * body .container .header #check:checked ~ .sidebar {
+          left: 0; }
+        * body .container .header #check:checked ~ label #btn {
+          left: 150px;
+          opacity: 0;
+          pointer-events: none; }
+        * body .container .header #check:checked ~ label #cancel {
+          left: 20px; }
+        * body .container .header .titulo {
+          padding: 10px;
+          text-align: center; }
+      * body .container .tabla {
+        grid-area: tabla;
+        text-align: center; }
+        * body .container .tabla .titulo-tabla {
+          padding: 10px;
+          margin-bottom: 8px;
+          border: 1px solid white;
+          border-radius: 5px; }
+        * body .container .tabla table {
+          width: 100%;
+          background: white;
+          font-size: 12px;
+          border-collapse: collapse; }
+          * body .container .tabla table th, * body .container .tabla table td {
+            padding: 6px; }
+      * body .container .formulario {
+        grid-area: formulario;
+        text-align: center; }
+        * body .container .formulario .titulo-form {
+          padding: 10px;
+          margin-bottom: 8px;
+          border: 1px solid white;
+          border-radius: 5px; }
+        * body .container .formulario .input1, * body .container .formulario .input2, * body .container .formulario .input3 {
+          width: 90%;
+          padding: 6px;
+          margin: 6px; }
+        * body .container .formulario .btn-submit1, * body .container .formulario .btn-submit2, * body .container .formulario .btn-submit3 {
+          padding: 4px;
+          margin: 4px; }
+    @media screen and (max-width: 700px) {
+      * body .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "tabla" "formulario"; } }
+
+/*# sourceMappingURL=index.css.map */
