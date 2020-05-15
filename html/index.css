@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  * body {
+    font-family: Arial;
+    background: #e3e4e5; }
+    * body .container {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      grid-template-areas: "header header" "tabla formulario"; }
+
+.item {
+  background: lightblue;
+  padding: 10px;
+  border: 1px solid black; }
+
+.header {
+  grid-area: header; }
+  .header .sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 95%;
+    background: #042331;
+    transition: all 0.5s ease; }
+    .header .sidebar header {
+      text-align: center;
+      font-size: 22px;
+      color: white;
+      line-height: 70px;
+      background: #063146;
+      user-select: none; }
+      .header .sidebar header ul a {
+        text-decoration: none;
+        display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-size: 20px;
+        color: white;
+        padding-left: 40px;
+        transition: 0.4s; }
+        .header .sidebar header ul a ul li:hover a {
+          padding-left: 50px; }
+        .header .sidebar header ul a #check {
+          display: none; }
+        .header .sidebar header ul a #btn, .header .sidebar header ul a #cancel {
+          position: relative;
+          cursor: pointer;
+          background: lightblue;
+          border-radius: 3px; }
+        .header .sidebar header ul a #btn {
+          left: 1px;
+          top: 25px;
+          font-size: 35px;
+          color: white;
+          padding: 2px 6px;
+          transition: all 0.5s ease; }
+        .header .sidebar header ul a #cancel {
+          z-index: 1111;
+          left: -195px;
+          top: 26px;
+          font-size: 30px;
+          color: white;
+          padding: 4px 9px;
+          transition: all 0.5s ease; }
+        .header .sidebar header ul a #check:checked ~ .sidebar {
+          left: 0; }
+        .header .sidebar header ul a #check:checked ~ label #btn {
+          left: 150px;
+          opacity: 0;
+          pointer-events: none; }
+        .header .sidebar header ul a #check:checked ~ label #cancel {
+          left: 195px; }
+        .header .sidebar header ul a .titulo {
+          padding: 10px;
+          text-align: center; }
+
+.tabla {
+  grid-area: tabla;
+  text-align: center; }
+  .tabla .titulo-tabla {
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid white;
+    border-radius: 5px; }
+    .tabla .titulo-tabla table {
+      width: 100%;
+      background: white;
+      font-size: 12px;
+      border-collapse: collapse; }
+      .tabla .titulo-tabla table th, .tabla .titulo-tabla table td {
+        padding: 6px; }
+
+.formulario {
+  grid-area: formulario;
+  text-align: center; }
+  .formulario .titulo-form {
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid white;
+    border-radius: 5px; }
+    .formulario .titulo-form .input1, .formulario .titulo-form .input2, .formulario .titulo-form .input3 {
+      width: 90%;
+      padding: 6px;
+      margin: 6px; }
+      .formulario .titulo-form .input1 .btn-submit1, .formulario .titulo-form .input1 .btn-submit2, .formulario .titulo-form .input1 .btn-submit3, .formulario .titulo-form .input2 .btn-submit1, .formulario .titulo-form .input2 .btn-submit2, .formulario .titulo-form .input2 .btn-submit3, .formulario .titulo-form .input3 .btn-submit1, .formulario .titulo-form .input3 .btn-submit2, .formulario .titulo-form .input3 .btn-submit3 {
+        padding: 4px;
+        margin: 4px; }
+
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header" "tabla" "formulario"; } }
+
+/*# sourceMappingURL=index.css.map */

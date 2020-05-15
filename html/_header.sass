@@ -1,0 +1,62 @@
+.header
+    grid-area: header
+    .sidebar
+        position: fixed
+        left: -250px
+        width: 250px
+        height: 95%
+        background: #042331
+        transition: all .5s ease
+        header
+            text-align: center
+            font-size: 22px
+            color: white
+            line-height: 70px
+            background: #063146
+            user-select: none
+            ul a
+                text-decoration: none
+                display: block
+                height: 100%
+                width: 100%
+                line-height: 65px
+                font-size: 20px
+                color: white
+                padding-left: 40px
+                transition: .4s
+                ul li:hover a
+                    padding-left: 50px
+                #check
+                    display: none
+                #btn,#cancel
+                    position: relative
+                    cursor: pointer
+                    background: lightblue
+                    border-radius: 3px
+                #btn
+                    left: 1px
+                    top: 25px
+                    font-size: 35px
+                    color: white
+                    padding: 2px 6px
+                    transition: all .5s ease
+                #cancel
+                    z-index: 1111
+                    left: -195px
+                    top: 26px
+                    font-size: 30px
+                    color: white
+                    padding: 4px 9px
+                    transition: all .5s ease
+                #check:checked ~ .sidebar
+                    left: 0
+                #check:checked ~ label #btn
+                    left: 150px
+                    opacity: 0
+                    pointer-events: none    
+                #check:checked ~ label #cancel
+                    left: 195px
+
+                .titulo
+                    padding: 10px
+                    text-align: center
