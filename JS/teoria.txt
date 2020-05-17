@@ -1,0 +1,62 @@
+1. Que es un API ?
+	para explicar que es una api debemos recurrir al termino interfaz que era lo que permitia la interaccion entre el usuario y el sistema. ahora un api vendria a ser un conjunto de reglas que permite la interaccion con otro sistema de informacion del cual se requiera algun servicio. por ejm usaremos un api para comunicar el frontend con el backend,donde un cliente va a solicitar recurso al servidor y este entregara dichos recursos.
+
+2. Peticiones de API
+	las peticiones de api se basan en el protocolo HTTP, la cual utiliza los sgts metdos:
+	-GET:obtener recursos, solo de recuperacion
+	-HEAD:solocita un respuesta identica a la del GET,pero sin el cuerpo de la respuesta
+	-POST:crear un nuevo recurso 
+	-DELETE:borrar un recurso
+	-CONNECT:solicita que el destinatario cree una conexion virtual de extremo a extremo
+	-OPTIONS:solicita info sobre las opciones de comunicacion disponible
+	-TRACE:realiza una pruieba de bucle de rertorno de mensaje a lo largo de la ruta al recurso de destino
+	-PUT/PATCH:actualizar recursos
+
+3.  Que es API rest
+	
+	Es un tipo de arquitectura de desarrollo web que se apoya totalmente en el estándar HTTP
+	ejemplo:
+	Vamos a ver cómo se realizaría una petición POST a la URL http://tudireccion.com. Las funciones 'OkCallback' y 			'ErrorCallback' serian las funciones de nuestro código para gestionar el resultado de la petición.
+
+	let http = new XMLHttpRequest();
+	http.open("POST", 'http://tudireccion.com', true);
+	http.setRequestHeader('Content-type', 'text/html; charset=UTF-8');
+	http.onreadystatechange = function() {
+    	    if (http.readyState == 4) {
+        	if (http.status == 200)
+          	  OkCallback(JSON.parse(http.responseText));
+        	else
+            	ErrorCallback(http);
+    	    }
+	};
+	http.onerror = OkCallback;
+	http.send(text);
+
+4. Backend
+	
+	Se divide en 3 roles:
+	-Backedn developer:
+		se encarga de la parte logica del negocio y crea Apis para que el frontend pueda consumirlas						consumirlas
+	-Administrador de base de datos:
+		Diseña, implementa, mejora y mantiene el skistema de base de datos
+	-Administrador del servidor:
+		gestiona la instalacion, soporte y mantiene el servidor en donde se aloja la web o app
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
